@@ -1,7 +1,11 @@
 package tests;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Date;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,18 +15,36 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import pages.LandingPage;
+import pages.RegisterPage;
+
 public class Register {
 	
 	WebDriver driver;
+	Properties prop;
 	
 	@BeforeMethod
 	public void setup() {
+		 
+		 try {
+			 prop = new Properties();
+			 File propFile = new File(System.getProperty("user.dir")+"\\src\\test\\java\\properties\\projectdata.properties");
+			 FileReader fr = new FileReader(propFile);
+			 prop.load(fr);
+		 }catch(IOException e){
+			 e.printStackTrace();
+		 }
+		
+		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get("https://tutorialsninja.com/demo/");
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Register")).click();
+		driver.get(prop.getProperty("url"));
+		
+		LandingPage landingPage = new LandingPage(driver);
+		landingPage.clickOnMyAccountOption();
+		driver = landingPage.selectRegisterOption();
+
 	}
 	
 	@AfterMethod
@@ -33,15 +55,13 @@ public class Register {
 	@Test(priority=1)
 	public void verifyRegisterAccountUsingMandatoryFields() {
 		
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Register")).click();
-		
-		driver.findElement(By.id("input-firstname")).sendKeys("Arun");
-		driver.findElement(By.id("input-lastname")).sendKeys("Motoori");
+		RegisterPage registerPage = new RegisterPage(driver);
+		registerPage.enterFirstName(prop.getProperty("firstname"));
+		driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("lastname"));
 		driver.findElement(By.id("input-email")).sendKeys(generateEmailWithTimeStamp());
-		driver.findElement(By.id("input-telephone")).sendKeys("1234567890");
-		driver.findElement(By.id("input-password")).sendKeys("passone");
-		driver.findElement(By.id("input-confirm")).sendKeys("passone");
+		driver.findElement(By.id("input-telephone")).sendKeys(prop.getProperty("telephone"));
+		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("validpassword"));
+		driver.findElement(By.id("input-confirm")).sendKeys(prop.getProperty("validpassword"));
 		driver.findElement(By.name("agree")).click();
 		driver.findElement(By.xpath("//input[@value='Continue']")).click();
 		
@@ -53,12 +73,12 @@ public class Register {
 	@Test(priority=2)
 	public void verifyRegisterAccountUsingAllFields() {
 				
-		driver.findElement(By.id("input-firstname")).sendKeys("Arun");
-		driver.findElement(By.id("input-lastname")).sendKeys("Motoori");
+		driver.findElement(By.id("input-firstname")).sendKeys(prop.getProperty("firstname"));
+		driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("lastname"));
 		driver.findElement(By.id("input-email")).sendKeys(generateEmailWithTimeStamp());
-		driver.findElement(By.id("input-telephone")).sendKeys("1234567890");
-		driver.findElement(By.id("input-password")).sendKeys("passtwo");
-		driver.findElement(By.id("input-confirm")).sendKeys("passtwo");
+		driver.findElement(By.id("input-telephone")).sendKeys(prop.getProperty("telephone"));
+		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("validpassword"));
+		driver.findElement(By.id("input-confirm")).sendKeys(prop.getProperty("validpassword"));
 		driver.findElement(By.xpath("//input[@name='newsletter'][@value='1']")).click();
 		driver.findElement(By.name("agree")).click();
 		driver.findElement(By.xpath("//input[@value='Continue']")).click();

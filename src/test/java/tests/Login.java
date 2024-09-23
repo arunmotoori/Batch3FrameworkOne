@@ -1,6 +1,10 @@
 package tests;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Date;
+import java.util.Properties;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -14,13 +18,23 @@ import org.testng.annotations.Test;
 public class Login {
 	
 	WebDriver driver;
+	Properties prop;
 	
 	@BeforeMethod
 	public void setup() {
 		
+		 try {
+			 prop = new Properties();
+			 File propFile = new File(System.getProperty("user.dir")+"\\src\\test\\java\\properties\\projectdata.properties");
+			 FileReader fr = new FileReader(propFile);
+			 prop.load(fr);
+		 }catch(IOException e){
+			 e.printStackTrace();
+		 }
+		
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
-		 driver.get("https://tutorialsninja.com/demo/");
+		 driver.get(prop.getProperty("url"));
 		 driver.findElement(By.xpath("//span[text()='My Account']")).click();
 		 driver.findElement(By.linkText("Login")).click();
 		 
@@ -37,8 +51,8 @@ public class Login {
 	@Test(priority=1)
 	public void verifyLoginWithValidCredentials() {
 		
-		driver.findElement(By.id("input-email")).sendKeys("amotooricap1@gmail.com");
-		driver.findElement(By.id("input-password")).sendKeys("12345");
+		driver.findElement(By.id("input-email")).sendKeys(prop.getProperty("validemail"));
+		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("validpassword2"));
 		driver.findElement(By.xpath("//input[@value='Login']")).click();
 		
 		Assert.assertTrue(driver.findElement(By.linkText("Logout")).isDisplayed());
@@ -49,7 +63,7 @@ public class Login {
 	public void verifyLoginWithInvalidCredentials() {
 		
 		driver.findElement(By.id("input-email")).sendKeys(generateEmailWithTimeStamp());
-		driver.findElement(By.id("input-password")).sendKeys("123456");
+		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("invalidpassword"));
 		driver.findElement(By.xpath("//input[@value='Login']")).click();
 		
 		String expectedWarning = "Warning: No match for E-Mail Address and/or Password.";
@@ -61,7 +75,7 @@ public class Login {
 	public void verifyLoginWithInvalidEmailAndValidPassword() {
 		
 		driver.findElement(By.id("input-email")).sendKeys(generateEmailWithTimeStamp());
-		driver.findElement(By.id("input-password")).sendKeys("12345");
+		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("validpassword2"));
 		driver.findElement(By.xpath("//input[@value='Login']")).click();
 		
 		String expectedWarning = "Warning: No match for E-Mail Address and/or Password.";
@@ -73,7 +87,7 @@ public class Login {
 	public void verifyLoginWithValidEmailAndInvalidPassword() {
 		
 		driver.findElement(By.id("input-email")).sendKeys(getRandomValidEmail());
-		driver.findElement(By.id("input-password")).sendKeys("123456");
+		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("invalidpassword"));
 		driver.findElement(By.xpath("//input[@value='Login']")).click();
 		
 		String expectedWarning = "Warning: No match for E-Mail Address and/or Password.";

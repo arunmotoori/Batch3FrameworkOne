@@ -1,5 +1,11 @@
 package tests;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,13 +17,25 @@ import org.testng.annotations.Test;
 public class Search {
 	
 	WebDriver driver;
+	Properties prop;
 	
 	@BeforeMethod
 	public void setup() {
 		
+		 try {
+			 prop = new Properties();
+			 File propFile = new File(System.getProperty("user.dir")+"\\src\\test\\java\\properties\\projectdata.properties");
+			 FileReader fr = new FileReader(propFile);
+			 prop.load(fr);
+		 }catch(IOException e){
+			 e.printStackTrace();
+		 }
+		
+		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://tutorialsninja.com/demo/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get(prop.getProperty("url"));
 		
 	}
 	
@@ -31,7 +49,7 @@ public class Search {
 	@Test(priority=1)
 	public void verifySearchingForExisitingProduct() {
 		
-		driver.findElement(By.name("search")).sendKeys("HP");
+		driver.findElement(By.name("search")).sendKeys(prop.getProperty("existingproduct"));
 		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
 		
 		Assert.assertTrue(driver.findElement(By.linkText("HP LP3065")).isDisplayed());
@@ -41,7 +59,7 @@ public class Search {
 	@Test(priority=2)
 	public void verifySearchingForNonExistingProduct() {
 		
-		driver.findElement(By.name("search")).sendKeys("Honda");
+		driver.findElement(By.name("search")).sendKeys(prop.getProperty("nonexistingproduct"));
 		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
 		
 		String expectedMessage = "There is no product that matches the search criteria.";
