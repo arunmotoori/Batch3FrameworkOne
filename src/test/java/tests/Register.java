@@ -57,13 +57,13 @@ public class Register {
 		
 		RegisterPage registerPage = new RegisterPage(driver);
 		registerPage.enterFirstName(prop.getProperty("firstname"));
-		driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("lastname"));
-		driver.findElement(By.id("input-email")).sendKeys(generateEmailWithTimeStamp());
-		driver.findElement(By.id("input-telephone")).sendKeys(prop.getProperty("telephone"));
-		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("validpassword"));
-		driver.findElement(By.id("input-confirm")).sendKeys(prop.getProperty("validpassword"));
-		driver.findElement(By.name("agree")).click();
-		driver.findElement(By.xpath("//input[@value='Continue']")).click();
+		registerPage.enterLastName(prop.getProperty("lastname"));
+		registerPage.enterEmailAddress(generateEmailWithTimeStamp());
+		registerPage.enterTelephoneNumber(prop.getProperty("telephone"));
+		registerPage.enterPassword(prop.getProperty("validpassword"));
+		registerPage.enterConfirmPassword(prop.getProperty("validpassword"));
+	    registerPage.selectPrivacyPolicy();
+		registerPage.clickOnContinueButton();
 		
 		String expectedTitle = "Your Account Has Been Created!";
 		Assert.assertEquals(driver.getTitle(),expectedTitle);
@@ -72,16 +72,18 @@ public class Register {
 	
 	@Test(priority=2)
 	public void verifyRegisterAccountUsingAllFields() {
-				
-		driver.findElement(By.id("input-firstname")).sendKeys(prop.getProperty("firstname"));
-		driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("lastname"));
-		driver.findElement(By.id("input-email")).sendKeys(generateEmailWithTimeStamp());
-		driver.findElement(By.id("input-telephone")).sendKeys(prop.getProperty("telephone"));
-		driver.findElement(By.id("input-password")).sendKeys(prop.getProperty("validpassword"));
-		driver.findElement(By.id("input-confirm")).sendKeys(prop.getProperty("validpassword"));
-		driver.findElement(By.xpath("//input[@name='newsletter'][@value='1']")).click();
-		driver.findElement(By.name("agree")).click();
-		driver.findElement(By.xpath("//input[@value='Continue']")).click();
+	     
+		RegisterPage registerPage = new RegisterPage(driver);
+		
+		registerPage.enterFirstName(prop.getProperty("firstname"));
+		registerPage.enterLastName(prop.getProperty("lastname"));
+		registerPage.enterEmailAddress(generateEmailWithTimeStamp());
+		registerPage.enterTelephoneNumber(prop.getProperty("telephone"));
+		registerPage.enterPassword(prop.getProperty("validpassword"));
+		registerPage.enterConfirmPassword(prop.getProperty("validpassword"));
+		registerPage.selectYesForNewsletter();
+		registerPage.selectPrivacyPolicy();
+		registerPage.clickOnContinueButton();
 		
 		String expectedTitle = "Your Account Has Been Created!";
 		Assert.assertEquals(driver.getTitle(),expectedTitle);
@@ -91,7 +93,8 @@ public class Register {
 	@Test(priority=3)
 	public void verifyRegisterAccountWithoutAnyDetails() {
 		
-		driver.findElement(By.xpath("//input[@value='Continue']")).click();
+		RegisterPage registerPage = new RegisterPage(driver);
+		registerPage.clickOnContinueButton();
 		
 		String expectedFirstNameWarning = "First Name must be between 1 and 32 characters!";
 		String expectedLastNameWarning = "Last Name must be between 1 and 32 characters!";
@@ -100,12 +103,12 @@ public class Register {
 		String expectedPasswordWarning = "Password must be between 4 and 20 characters!";
 		String expectedPrivacyPolicyWarning = "Warning: You must agree to the Privacy Policy!";
 		
-		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='input-firstname']/following-sibling::div")).getText(), expectedFirstNameWarning);
-		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='input-lastname']/following-sibling::div")).getText(), expectedLastNameWarning);
-		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='input-email']/following-sibling::div")).getText(), expectedEmailWarning);
-		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='input-telephone']/following-sibling::div")).getText(), expectedTelephoneWarning);
-		Assert.assertEquals(driver.findElement(By.xpath("//*[@id='input-password']/following-sibling::div")).getText(), expectedPasswordWarning);
-		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).getText().contains(expectedPrivacyPolicyWarning));
+		Assert.assertEquals(registerPage.getFirstNameWarningMessage(), expectedFirstNameWarning);
+		Assert.assertEquals(registerPage.getLastNameWarningMessage(), expectedLastNameWarning);
+		Assert.assertEquals(registerPage.getEmailWarningMessage(), expectedEmailWarning);
+		Assert.assertEquals(registerPage.getTelephoneWarningMessage(), expectedTelephoneWarning);
+		Assert.assertEquals(registerPage.getPasswordWarningMessage(), expectedPasswordWarning);
+		Assert.assertTrue(registerPage.getPrivacyPolicyWarningMessage().contains(expectedPrivacyPolicyWarning));
 		
 	}
 	

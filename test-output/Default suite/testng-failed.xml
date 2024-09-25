@@ -8,6 +8,7 @@
           <include name="teardown"/>
           <include name="verifyRegisterAccountUsingMandatoryFields"/>
           <include name="setup"/>
+          <include name="verifyRegisterAccountWithoutAnyDetails"/>
           <include name="verifyRegisterAccountUsingAllFields"/>
         </methods>
       </class> <!-- tests.Register -->

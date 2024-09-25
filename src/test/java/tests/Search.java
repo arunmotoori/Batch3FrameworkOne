@@ -14,6 +14,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import pages.LandingPage;
+import pages.SearchPage;
+
 public class Search {
 	
 	WebDriver driver;
@@ -49,31 +52,37 @@ public class Search {
 	@Test(priority=1)
 	public void verifySearchingForExisitingProduct() {
 		
-		driver.findElement(By.name("search")).sendKeys(prop.getProperty("existingproduct"));
-		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
+		LandingPage landingPage = new LandingPage(driver);
+		landingPage.enterSearchTermIntoSearchBoxField(prop.getProperty("existingproduct"));
+		driver = landingPage.clickOnSearchButton();
 		
-		Assert.assertTrue(driver.findElement(By.linkText("HP LP3065")).isDisplayed());
+		SearchPage searchPage = new SearchPage(driver);
+		Assert.assertTrue(searchPage.displayStatusOfProduct());
 		
 	}
 	
 	@Test(priority=2)
 	public void verifySearchingForNonExistingProduct() {
 		
-		driver.findElement(By.name("search")).sendKeys(prop.getProperty("nonexistingproduct"));
-		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
+		LandingPage landingPage = new LandingPage(driver);
+		landingPage.enterSearchTermIntoSearchBoxField(prop.getProperty("nonexistingproduct"));
+		driver = landingPage.clickOnSearchButton();
 		
+		SearchPage searchPage = new SearchPage(driver);
 		String expectedMessage = "There is no product that matches the search criteria.";
-		Assert.assertEquals(driver.findElement(By.xpath("//input[@id='button-search']/following-sibling::p")).getText(), expectedMessage);
+		Assert.assertEquals(searchPage.getSearchResultsMessage(), expectedMessage);
 		
 	}
 	
 	@Test(priority=3)
 	public void verifySearchingWithoutAnyProduct() {
 		
-		driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
+		LandingPage landingPage = new LandingPage(driver);
+		landingPage.clickOnSearchButton();
 		
+		SearchPage searchPage = new SearchPage(driver);
 		String expectedMessage = "There is no product that matches the search criteria.";
-		Assert.assertEquals(driver.findElement(By.xpath("//input[@id='button-search']/following-sibling::p")).getText(), expectedMessage);
+		Assert.assertEquals(searchPage.getSearchResultsMessage(), expectedMessage);
 		
 	}
 
