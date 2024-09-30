@@ -7,7 +7,6 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -22,6 +21,7 @@ public class Register {
 	
 	WebDriver driver;
 	Properties prop;
+	RegisterPage registerPage;
 	
 	@BeforeMethod
 	public void setup() {
@@ -41,9 +41,7 @@ public class Register {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get(prop.getProperty("url"));
 		
-		LandingPage landingPage = new LandingPage(driver);
-		landingPage.clickOnMyAccountOption();
-		driver = landingPage.selectRegisterOption();
+		registerPage = new LandingPage(driver).navigateToRegisterPage();
 
 	}
 	
@@ -54,17 +52,9 @@ public class Register {
 	
 	@Test(priority=1)
 	public void verifyRegisterAccountUsingMandatoryFields() {
-		
-		RegisterPage registerPage = new RegisterPage(driver);
-		registerPage.enterFirstName(prop.getProperty("firstname"));
-		registerPage.enterLastName(prop.getProperty("lastname"));
-		registerPage.enterEmailAddress(generateEmailWithTimeStamp());
-		registerPage.enterTelephoneNumber(prop.getProperty("telephone"));
-		registerPage.enterPassword(prop.getProperty("validpassword"));
-		registerPage.enterConfirmPassword(prop.getProperty("validpassword"));
-	    registerPage.selectPrivacyPolicy();
-		registerPage.clickOnContinueButton();
-		
+	
+		registerPage.registerAnAccount(prop.getProperty("firstname"), prop.getProperty("lastname"),generateEmailWithTimeStamp(),prop.getProperty("telephone"),prop.getProperty("validpassword"),false,true);
+	   		
 		String expectedTitle = "Your Account Has Been Created!";
 		Assert.assertEquals(driver.getTitle(),expectedTitle);
 	
@@ -73,17 +63,7 @@ public class Register {
 	@Test(priority=2)
 	public void verifyRegisterAccountUsingAllFields() {
 	     
-		RegisterPage registerPage = new RegisterPage(driver);
-		
-		registerPage.enterFirstName(prop.getProperty("firstname"));
-		registerPage.enterLastName(prop.getProperty("lastname"));
-		registerPage.enterEmailAddress(generateEmailWithTimeStamp());
-		registerPage.enterTelephoneNumber(prop.getProperty("telephone"));
-		registerPage.enterPassword(prop.getProperty("validpassword"));
-		registerPage.enterConfirmPassword(prop.getProperty("validpassword"));
-		registerPage.selectYesForNewsletter();
-		registerPage.selectPrivacyPolicy();
-		registerPage.clickOnContinueButton();
+		registerPage.registerAnAccount(prop.getProperty("firstname"), prop.getProperty("lastname"),generateEmailWithTimeStamp(),prop.getProperty("telephone"),prop.getProperty("validpassword"),true,true);
 		
 		String expectedTitle = "Your Account Has Been Created!";
 		Assert.assertEquals(driver.getTitle(),expectedTitle);
@@ -92,10 +72,9 @@ public class Register {
 	
 	@Test(priority=3)
 	public void verifyRegisterAccountWithoutAnyDetails() {
-		
-		RegisterPage registerPage = new RegisterPage(driver);
-		registerPage.clickOnContinueButton();
-		
+	
+		registerPage.registerAnAccount("","","","","",false,false);
+
 		String expectedFirstNameWarning = "First Name must be between 1 and 32 characters!";
 		String expectedLastNameWarning = "Last Name must be between 1 and 32 characters!";
 		String expectedEmailWarning = "E-Mail Address does not appear to be valid!";

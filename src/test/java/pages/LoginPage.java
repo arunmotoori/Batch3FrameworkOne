@@ -1,8 +1,9 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 	
@@ -10,26 +11,41 @@ public class LoginPage {
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		PageFactory.initElements(driver,this);
+	}
+
+	@FindBy(id="input-email")
+	private WebElement emailField;
+	
+	@FindBy(id="input-password")
+	private WebElement passwordField;
+	
+	@FindBy(xpath="//input[@value='Login']")
+	private WebElement loginButton;
+	
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
+	private WebElement warningMessage;
+	
+	public AccountPage loginToApplication(String emailAddressData,String passwordData) {
+		enterEmailAddress(emailAddressData);
+		enterPassword(passwordData);
+		return clickOnLoginButton();
 	}
 	
 	public void enterEmailAddress(String emailAddressData) {
-		WebElement emailField = driver.findElement(By.id("input-email"));
 		emailField.sendKeys(emailAddressData);
 	}
 	
 	public void enterPassword(String passwordData) {
-		WebElement passwordField = driver.findElement(By.id("input-password"));
 		passwordField.sendKeys(passwordData);
 	}
 	
-	public WebDriver clickOnLoginButton() {
-		WebElement loginButton = driver.findElement(By.xpath("//input[@value='Login']"));
+	public AccountPage clickOnLoginButton() {
 		loginButton.click();
-		return driver;
+		return new AccountPage(driver);
 	}
 	
 	public String getWarningMessage() {
-		WebElement warningMessage = driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']"));
 		return warningMessage.getText();
 	}
 

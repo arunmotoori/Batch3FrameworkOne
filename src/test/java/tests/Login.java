@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -23,6 +22,9 @@ public class Login {
 	
 	WebDriver driver;
 	Properties prop;
+	LandingPage landingPage;
+	LoginPage loginPage;
+	AccountPage accountPage;
 	
 	@BeforeMethod
 	public void setup() {
@@ -39,10 +41,8 @@ public class Login {
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
 		 driver.get(prop.getProperty("url"));
-		 LandingPage landingPage = new LandingPage(driver);
-		 landingPage.clickOnMyAccountOption();
-		 driver = landingPage.selectLoginOption();
-		 
+		 loginPage = new LandingPage(driver).navigateToLoginPage();;
+	
 	}
 	
 	
@@ -55,12 +55,8 @@ public class Login {
 	
 	@Test(priority=1)
 	public void verifyLoginWithValidCredentials() {
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterEmailAddress(prop.getProperty("validemail"));
-		loginPage.enterPassword(prop.getProperty("validpassword2"));
-		driver = loginPage.clickOnLoginButton();
 		
-		AccountPage accountPage = new AccountPage(driver);
+		accountPage = loginPage.loginToApplication(prop.getProperty("validemail"),prop.getProperty("validpassword2"));
 		Assert.assertTrue(accountPage.displayStatusOfLogoutOption());
 	
 	}
@@ -68,10 +64,7 @@ public class Login {
 	@Test(priority=2)
 	public void verifyLoginWithInvalidCredentials() {
 		
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterEmailAddress(generateEmailWithTimeStamp());
-		loginPage.enterPassword(prop.getProperty("invalidpassword"));
-		loginPage.clickOnLoginButton();
+		loginPage.loginToApplication(generateEmailWithTimeStamp(),prop.getProperty("invalidpassword"));
 		
 		String expectedWarning = "Warning: No match for E-Mail Address and/or Password.";
 		Assert.assertTrue(loginPage.getWarningMessage().contains(expectedWarning));
@@ -80,11 +73,8 @@ public class Login {
 	
 	@Test(priority=3)
 	public void verifyLoginWithInvalidEmailAndValidPassword() {
-		
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterEmailAddress(generateEmailWithTimeStamp());
-		loginPage.enterPassword(prop.getProperty("validpassword2"));
-		loginPage.clickOnLoginButton();
+	
+		loginPage.loginToApplication(generateEmailWithTimeStamp(),prop.getProperty("validpassword2"));
 		
 		String expectedWarning = "Warning: No match for E-Mail Address and/or Password.";
 		Assert.assertTrue(loginPage.getWarningMessage().contains(expectedWarning));
@@ -93,12 +83,9 @@ public class Login {
 	
 	@Test(priority=4)
 	public void verifyLoginWithValidEmailAndInvalidPassword() {
-		
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterEmailAddress(getRandomValidEmail());
-		loginPage.enterPassword(prop.getProperty("invalidpassword"));
-		loginPage.clickOnLoginButton();
-		
+	
+		loginPage.loginToApplication(getRandomValidEmail(),prop.getProperty("invalidpassword"));
+				
 		String expectedWarning = "Warning: No match for E-Mail Address and/or Password.";
 		Assert.assertTrue(loginPage.getWarningMessage().contains(expectedWarning));
 		
@@ -107,8 +94,7 @@ public class Login {
 	@Test(priority=5)
 	public void verifyLoginWithoutCredentials() {
 		
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.clickOnLoginButton();
+		loginPage.loginToApplication("","");
 		
 		String expectedWarning = "Warning: No match for E-Mail Address and/or Password.";
 		Assert.assertTrue(loginPage.getWarningMessage().contains(expectedWarning));
