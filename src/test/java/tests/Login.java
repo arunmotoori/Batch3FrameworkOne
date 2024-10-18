@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.Random;
 
@@ -12,11 +13,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.AccountPage;
 import pages.LandingPage;
 import pages.LoginPage;
+import util.DataUtil;
+import util.MyXLSReader;
 
 public class Login {
 	
@@ -53,12 +57,33 @@ public class Login {
 		
 	}
 	
-	@Test(priority=1)
-	public void verifyLoginWithValidCredentials() {
+	@Test(priority=1,dataProvider="loginDataSupplier")
+	public void verifyLoginWithValidCredentials(HashMap<String,String> hMap) {
 		
-		accountPage = loginPage.loginToApplication(prop.getProperty("validemail"),prop.getProperty("validpassword2"));
+		accountPage = loginPage.loginToApplication(hMap.get("Username"),hMap.get("Password"));
 		Assert.assertTrue(accountPage.displayStatusOfLogoutOption());
 	
+	}
+	
+	@DataProvider(name="loginDataSupplier")
+	public Object[][] dataProviderMethodForLoginTest() {
+		String excelFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\TutorialsNinja.xlsx";
+		MyXLSReader myXLSReader = null;
+		Object[][] data = null;
+		try {
+			myXLSReader = new MyXLSReader(excelFilePath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			data = DataUtil.getTestData(myXLSReader,"LoginTest","data");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return data;
 	}
 	
 	@Test(priority=2)
