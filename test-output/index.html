@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">14 methods,   14 passed</span>
+                    <span class="method-stats">13 methods, 1 failed,  2 skipped,  10 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchingForExisitingProduct">verifySearchingForExisitingProduct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.Logout" class="method navigator-link" hash-for-method="verifyLogoutFromMyAccountMenu">verifyLogoutFromMyAccountMenu</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchingWithoutAnyProduct">verifySearchingWithoutAnyProduct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -113,7 +146,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})">verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})">verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -123,7 +156,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})">verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})">verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -134,11 +167,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="tests.Login" class="method navigator-link" hash-for-method="verifyLoginWithoutCredentials">verifyLoginWithoutCredentials</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Logout" class="method navigator-link" hash-for-method="verifyLogoutFromMyAccountMenu">verifyLogoutFromMyAccountMenu</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -156,21 +184,6 @@
                         <a href="#" panel-name="suite-Suite" title="tests.Register" class="method navigator-link" hash-for-method="verifyRegisterAccountWithoutAnyDetails">verifyRegisterAccountWithoutAnyDetails</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchingForExisitingProduct">verifySearchingForExisitingProduct</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchingForNonExistingProduct">verifySearchingForNonExistingProduct</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="tests.Search" class="method navigator-link" hash-for-method="verifySearchingWithoutAnyProduct">verifySearchingWithoutAnyProduct</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -183,6 +196,66 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.Search</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySearchingForExisitingProduct">
+                  </a> <!-- verifySearchingForExisitingProduct -->
+                  <span class="method-name">verifySearchingForExisitingProduct</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at tests.Search.verifySearchingForExisitingProduct(Search.java:39)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.Logout</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLogoutFromMyAccountMenu">
+                  </a> <!-- verifyLogoutFromMyAccountMenu -->
+                  <span class="method-name">verifyLogoutFromMyAccountMenu</span>
+                  <div class="stack-trace">org.testng.SkipException: The value of i is 1 and hence this test got skipped
+	at tests.Logout.verifyLogoutFromMyAccountMenu(Logout.java:41)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">tests.Search</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySearchingWithoutAnyProduct">
+                  </a> <!-- verifySearchingWithoutAnyProduct -->
+                  <span class="method-name">verifySearchingWithoutAnyProduct</span>
+                  <div class="stack-trace">java.lang.Throwable: Method tests.Search.verifySearchingWithoutAnyProduct() on instance tests.Search@7586beff depends on not successfully finished methods 
+[tests.Search.verifySearchingForExisitingProduct() on instance tests.Search@7586beff]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -215,35 +288,6 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.Search</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifySearchingForExisitingProduct">
-                  </a> <!-- verifySearchingForExisitingProduct -->
-                  <span class="method-name">verifySearchingForExisitingProduct</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifySearchingForNonExistingProduct">
-                  </a> <!-- verifySearchingForNonExistingProduct -->
-                  <span class="method-name">verifySearchingForNonExistingProduct</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifySearchingWithoutAnyProduct">
-                  </a> <!-- verifySearchingWithoutAnyProduct -->
-                  <span class="method-name">verifySearchingWithoutAnyProduct</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
               <span class="class-name">tests.Login</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -263,10 +307,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})">
-                  </a> <!-- verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno}) -->
+                  <a name="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})">
+                  </a> <!-- verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde}) -->
                   <span class="method-name">verifyLoginWithValidCredentials</span>
-                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})</span>
+                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -279,10 +323,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})">
-                  </a> <!-- verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde}) -->
+                  <a name="verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})">
+                  </a> <!-- verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno}) -->
                   <span class="method-name">verifyLoginWithValidCredentials</span>
-                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})</span>
+                  <span class="parameters">({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -301,21 +345,6 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.Logout</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyLogoutFromMyAccountMenu">
-                  </a> <!-- verifyLogoutFromMyAccountMenu -->
-                  <span class="method-name">verifyLogoutFromMyAccountMenu</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -326,6 +355,9 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;listeners.MyListeners&quot;/&gt;
+  &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.Register&quot;/&gt;
@@ -371,68 +403,64 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(14);
+data.addRows(13);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyLogoutFromMyAccountMenu')
-data.setCell(0, 2, 'tests.Logout')
-data.setCell(0, 3, 2420);
+data.setCell(0, 1, 'verifyRegisterAccountUsingMandatoryFields')
+data.setCell(0, 2, 'tests.Register')
+data.setCell(0, 3, 1423);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyRegisterAccountUsingMandatoryFields')
+data.setCell(1, 1, 'verifyRegisterAccountUsingAllFields')
 data.setCell(1, 2, 'tests.Register')
-data.setCell(1, 3, 1701);
+data.setCell(1, 3, 1383);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyLoginWithInvalidEmailAndValidPassword')
+data.setCell(2, 1, 'verifyLoginWithValidCredentials')
 data.setCell(2, 2, 'tests.Login')
-data.setCell(2, 3, 1693);
+data.setCell(2, 3, 1135);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'verifyRegisterAccountUsingAllFields')
-data.setCell(3, 2, 'tests.Register')
-data.setCell(3, 3, 1578);
+data.setCell(3, 1, 'verifyLoginWithValidCredentials')
+data.setCell(3, 2, 'tests.Login')
+data.setCell(3, 3, 1119);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'verifyLoginWithValidCredentials')
 data.setCell(4, 2, 'tests.Login')
-data.setCell(4, 3, 1068);
+data.setCell(4, 3, 1087);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyLoginWithValidCredentials')
-data.setCell(5, 2, 'tests.Login')
-data.setCell(5, 3, 1064);
+data.setCell(5, 1, 'verifyRegisterAccountWithoutAnyDetails')
+data.setCell(5, 2, 'tests.Register')
+data.setCell(5, 3, 989);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyLoginWithValidCredentials')
+data.setCell(6, 1, 'verifyLoginWithInvalidCredentials')
 data.setCell(6, 2, 'tests.Login')
-data.setCell(6, 3, 1058);
+data.setCell(6, 3, 903);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'verifyRegisterAccountWithoutAnyDetails')
-data.setCell(7, 2, 'tests.Register')
-data.setCell(7, 3, 933);
+data.setCell(7, 1, 'verifyLoginWithInvalidEmailAndValidPassword')
+data.setCell(7, 2, 'tests.Login')
+data.setCell(7, 3, 882);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verifyLoginWithInvalidCredentials')
+data.setCell(8, 1, 'verifyLoginWithValidEmailAndInvalidPassword')
 data.setCell(8, 2, 'tests.Login')
-data.setCell(8, 3, 879);
+data.setCell(8, 3, 876);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'verifyLoginWithValidEmailAndInvalidPassword')
+data.setCell(9, 1, 'verifyLoginWithoutCredentials')
 data.setCell(9, 2, 'tests.Login')
-data.setCell(9, 3, 804);
+data.setCell(9, 3, 753);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'verifyLoginWithoutCredentials')
-data.setCell(10, 2, 'tests.Login')
-data.setCell(10, 3, 728);
+data.setCell(10, 1, 'verifySearchingForExisitingProduct')
+data.setCell(10, 2, 'tests.Search')
+data.setCell(10, 3, 647);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'verifySearchingForExisitingProduct')
-data.setCell(11, 2, 'tests.Search')
-data.setCell(11, 3, 630);
+data.setCell(11, 1, 'verifyLogoutFromMyAccountMenu')
+data.setCell(11, 2, 'tests.Logout')
+data.setCell(11, 3, 2);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'verifySearchingWithoutAnyProduct')
 data.setCell(12, 2, 'tests.Search')
-data.setCell(12, 3, 493);
-data.setCell(13, 0, 13)
-data.setCell(13, 1, 'verifySearchingForNonExistingProduct')
-data.setCell(13, 2, 'tests.Search')
-data.setCell(13, 3, 464);
+data.setCell(12, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 11 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -447,9 +475,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">tests.Search</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">verifySearchingForNonExistingProduct</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -465,176 +500,154 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyRegisterAccountUsingMandatoryFields</span>
-                <span class="method-start">4949 ms</span>
+                <span class="method-start">4815 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">6652 ms</span>
+                <span class="method-start">6242 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">6827 ms</span>
+                <span class="method-start">6383 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyRegisterAccountUsingAllFields</span>
-                <span class="method-start">10114 ms</span>
+                <span class="method-start">9791 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">11695 ms</span>
+                <span class="method-start">11177 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">11865 ms</span>
+                <span class="method-start">11316 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyRegisterAccountWithoutAnyDetails</span>
-                <span class="method-start">15096 ms</span>
+                <span class="method-start">14871 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">16030 ms</span>
+                <span class="method-start">15861 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.Login</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">16554 ms</span>
+                <span class="method-start">16404 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch1@gmail.com, Password=abcde})</span>
-                <span class="method-start">19731 ms</span>
+                <span class="method-start">19639 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">20799 ms</span>
+                <span class="method-start">20759 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">20962 ms</span>
+                <span class="method-start">20916 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch11@gmail.com, Password=fghij})</span>
-                <span class="method-start">24249 ms</span>
+                <span class="method-start">24053 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">25308 ms</span>
+                <span class="method-start">25142 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">25462 ms</span>
+                <span class="method-start">25292 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithValidCredentials({Runmode=Y, ExpectedResult=Success, Username=amotooribatch111@gmail.com, Password=klmno})</span>
-                <span class="method-start">28507 ms</span>
+                <span class="method-start">28795 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">29571 ms</span>
+                <span class="method-start">29932 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">29743 ms</span>
+                <span class="method-start">30087 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithInvalidCredentials</span>
-                <span class="method-start">32910 ms</span>
+                <span class="method-start">33380 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">33790 ms</span>
+                <span class="method-start">34284 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">33955 ms</span>
+                <span class="method-start">34448 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithInvalidEmailAndValidPassword</span>
-                <span class="method-start">37473 ms</span>
+                <span class="method-start">37480 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">39167 ms</span>
+                <span class="method-start">38363 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">39324 ms</span>
+                <span class="method-start">38538 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithValidEmailAndInvalidPassword</span>
-                <span class="method-start">42473 ms</span>
+                <span class="method-start">41633 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">43278 ms</span>
+                <span class="method-start">42510 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">43433 ms</span>
+                <span class="method-start">42683 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginWithoutCredentials</span>
-                <span class="method-start">46543 ms</span>
+                <span class="method-start">45823 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">47271 ms</span>
+                <span class="method-start">46578 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.Search</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">47433 ms</span>
+                <span class="method-start">46745 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifySearchingForExisitingProduct</span>
-                <span class="method-start">50088 ms</span>
+                <span class="method-start">49447 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">50718 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">50874 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifySearchingForNonExistingProduct</span>
-                <span class="method-start">53530 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">53995 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">54148 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifySearchingWithoutAnyProduct</span>
-                <span class="method-start">57679 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">teardown</span>
-                <span class="method-start">58173 ms</span>
+                <span class="method-start">50097 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.Logout</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">58344 ms</span>
+                <span class="method-start">50243 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLogoutFromMyAccountMenu</span>
-                <span class="method-start">61042 ms</span>
+                <span class="method-start">52987 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">63463 ms</span>
+                <span class="method-start">52990 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

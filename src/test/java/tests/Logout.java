@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -33,6 +34,12 @@ public class Logout extends Base {
 	
 	@Test(priority=1)
 	public void verifyLogoutFromMyAccountMenu() {
+		
+		int i = 1;
+		
+		if(i==1) {
+			throw new SkipException("The value of i is 1 and hence this test got skipped");
+		}
 		
 		accountLogoutPage = landingPage.navigateToLoginPage().loginToApplication(prop.getProperty("validemail"),prop.getProperty("validpassword2")).logoutFromApplication();
 		

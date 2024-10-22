@@ -36,11 +36,11 @@ public class Search extends Base {
 		searchPage = landingPage.searchProduct(prop.getProperty("existingproduct"));
 				
 		searchPage = new SearchPage(driver);
-		Assert.assertTrue(searchPage.displayStatusOfProduct());
+		Assert.assertTrue(!searchPage.displayStatusOfProduct());
 		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,enabled=false)
 	public void verifySearchingForNonExistingProduct() {
 	
 		searchPage = landingPage.searchProduct(prop.getProperty("nonexistingproduct"));
@@ -50,7 +50,7 @@ public class Search extends Base {
 		
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3,dependsOnMethods="verifySearchingForExisitingProduct")
 	public void verifySearchingWithoutAnyProduct() {
 		
 		searchPage = landingPage.searchProduct("");
