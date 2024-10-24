@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +12,7 @@ import pages.SearchPage;
 
 public class Search extends Base {
 
+	public WebDriver driver;
 	LandingPage landingPage;
 	SearchPage searchPage;
 	

@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -14,6 +15,7 @@ import pages.LoginPage;
 
 public class Logout extends Base {
 	
+	public WebDriver driver;
 	LandingPage landingPage;
 	LoginPage loginPage;
 	AccountPage accountPage;

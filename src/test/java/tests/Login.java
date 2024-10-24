@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Random;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +20,7 @@ import util.MyXLSReader;
 
 public class Login extends Base{
 	
+	public WebDriver driver;
 	LandingPage landingPage;
 	LoginPage loginPage;
 	AccountPage accountPage;

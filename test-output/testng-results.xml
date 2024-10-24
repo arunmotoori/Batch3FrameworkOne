@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="13" passed="10" failed="1" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-22T21:20:47 IST" name="Suite" finished-at="2024-10-22T21:21:40 IST" duration-ms="53196">
+  <suite started-at="2024-10-24T22:17:49 IST" name="Suite" finished-at="2024-10-24T22:18:41 IST" duration-ms="52277">
     <groups>
     </groups>
-    <test started-at="2024-10-22T21:20:47 IST" name="Test" finished-at="2024-10-22T21:21:40 IST" duration-ms="53196">
+    <test started-at="2024-10-24T22:17:49 IST" name="Test" finished-at="2024-10-24T22:18:41 IST" duration-ms="52277">
       <class name="tests.Login">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:03 IST" name="setup" finished-at="2024-10-22T21:21:06 IST" duration-ms="3235" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:06 IST" name="setup" finished-at="2024-10-24T22:18:09 IST" duration-ms="3012" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginWithValidCredentials(java.util.HashMap)[pri:1, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:06 IST" name="verifyLoginWithValidCredentials" data-provider="loginDataSupplier" finished-at="2024-10-22T21:21:08 IST" duration-ms="1119" status="PASS">
+        <test-method signature="verifyLoginWithValidCredentials(java.util.HashMap)[pri:1, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:09 IST" name="verifyLoginWithValidCredentials" data-provider="loginDataSupplier" finished-at="2024-10-24T22:18:10 IST" duration-ms="1070" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,15 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidCredentials -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:08 IST" name="teardown" finished-at="2024-10-22T21:21:08 IST" duration-ms="157" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:10 IST" name="teardown" finished-at="2024-10-24T22:18:10 IST" duration-ms="145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:08 IST" name="setup" finished-at="2024-10-22T21:21:11 IST" duration-ms="3136" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:10 IST" name="setup" finished-at="2024-10-24T22:18:14 IST" duration-ms="3133" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginWithValidCredentials(java.util.HashMap)[pri:1, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:11 IST" name="verifyLoginWithValidCredentials" data-provider="loginDataSupplier" finished-at="2024-10-22T21:21:12 IST" duration-ms="1087" status="PASS">
+        <test-method signature="verifyLoginWithValidCredentials(java.util.HashMap)[pri:1, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:14 IST" name="verifyLoginWithValidCredentials" data-provider="loginDataSupplier" finished-at="2024-10-24T22:18:15 IST" duration-ms="1019" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,15 +41,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidCredentials -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:12 IST" name="teardown" finished-at="2024-10-22T21:21:12 IST" duration-ms="149" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:15 IST" name="teardown" finished-at="2024-10-24T22:18:15 IST" duration-ms="162" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:12 IST" name="setup" finished-at="2024-10-22T21:21:16 IST" duration-ms="3503" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:15 IST" name="setup" finished-at="2024-10-24T22:18:18 IST" duration-ms="2969" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginWithValidCredentials(java.util.HashMap)[pri:1, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:16 IST" name="verifyLoginWithValidCredentials" data-provider="loginDataSupplier" finished-at="2024-10-22T21:21:17 IST" duration-ms="1135" status="PASS">
+        <test-method signature="verifyLoginWithValidCredentials(java.util.HashMap)[pri:1, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:18 IST" name="verifyLoginWithValidCredentials" data-provider="loginDataSupplier" finished-at="2024-10-24T22:18:19 IST" duration-ms="1029" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,72 +60,72 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidCredentials -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:17 IST" name="teardown" finished-at="2024-10-22T21:21:17 IST" duration-ms="154" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:19 IST" name="teardown" finished-at="2024-10-24T22:18:19 IST" duration-ms="156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:17 IST" name="setup" finished-at="2024-10-22T21:21:20 IST" duration-ms="3292" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:19 IST" name="setup" finished-at="2024-10-24T22:18:22 IST" duration-ms="3179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginWithInvalidCredentials()[pri:2, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:20 IST" name="verifyLoginWithInvalidCredentials" finished-at="2024-10-22T21:21:21 IST" duration-ms="903" status="PASS">
+        <test-method signature="verifyLoginWithInvalidCredentials()[pri:2, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:22 IST" name="verifyLoginWithInvalidCredentials" finished-at="2024-10-24T22:18:23 IST" duration-ms="860" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:21 IST" name="teardown" finished-at="2024-10-22T21:21:21 IST" duration-ms="163" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:23 IST" name="teardown" finished-at="2024-10-24T22:18:23 IST" duration-ms="165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:21 IST" name="setup" finished-at="2024-10-22T21:21:24 IST" duration-ms="3031" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:23 IST" name="setup" finished-at="2024-10-24T22:18:26 IST" duration-ms="3047" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginWithInvalidEmailAndValidPassword()[pri:3, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:24 IST" name="verifyLoginWithInvalidEmailAndValidPassword" finished-at="2024-10-22T21:21:25 IST" duration-ms="882" status="PASS">
+        <test-method signature="verifyLoginWithInvalidEmailAndValidPassword()[pri:3, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:26 IST" name="verifyLoginWithInvalidEmailAndValidPassword" finished-at="2024-10-24T22:18:27 IST" duration-ms="870" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithInvalidEmailAndValidPassword -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:25 IST" name="teardown" finished-at="2024-10-22T21:21:25 IST" duration-ms="174" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:27 IST" name="teardown" finished-at="2024-10-24T22:18:27 IST" duration-ms="169" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:25 IST" name="setup" finished-at="2024-10-22T21:21:28 IST" duration-ms="3095" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:27 IST" name="setup" finished-at="2024-10-24T22:18:30 IST" duration-ms="2852" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginWithValidEmailAndInvalidPassword()[pri:4, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:28 IST" name="verifyLoginWithValidEmailAndInvalidPassword" finished-at="2024-10-22T21:21:29 IST" duration-ms="876" status="PASS">
+        <test-method signature="verifyLoginWithValidEmailAndInvalidPassword()[pri:4, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:30 IST" name="verifyLoginWithValidEmailAndInvalidPassword" finished-at="2024-10-24T22:18:31 IST" duration-ms="770" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithValidEmailAndInvalidPassword -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:29 IST" name="teardown" finished-at="2024-10-22T21:21:30 IST" duration-ms="172" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:31 IST" name="teardown" finished-at="2024-10-24T22:18:31 IST" duration-ms="141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:30 IST" name="setup" finished-at="2024-10-22T21:21:33 IST" duration-ms="3140" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:31 IST" name="setup" finished-at="2024-10-24T22:18:34 IST" duration-ms="2756" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginWithoutCredentials()[pri:5, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:33 IST" name="verifyLoginWithoutCredentials" finished-at="2024-10-22T21:21:33 IST" duration-ms="753" status="PASS">
+        <test-method signature="verifyLoginWithoutCredentials()[pri:5, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:34 IST" name="verifyLoginWithoutCredentials" finished-at="2024-10-24T22:18:34 IST" duration-ms="715" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginWithoutCredentials -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@5b12b668]" started-at="2024-10-22T21:21:33 IST" name="teardown" finished-at="2024-10-22T21:21:34 IST" duration-ms="167" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@6a78afa0]" started-at="2024-10-24T22:18:34 IST" name="teardown" finished-at="2024-10-24T22:18:35 IST" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.Login -->
       <class name="tests.Logout">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Logout@3b69e7d1]" started-at="2024-10-22T21:21:37 IST" name="setup" finished-at="2024-10-22T21:21:40 IST" duration-ms="2744" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Logout@3fc2959f]" started-at="2024-10-24T22:18:38 IST" name="setup" finished-at="2024-10-24T22:18:41 IST" duration-ms="2543" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLogoutFromMyAccountMenu()[pri:1, instance:tests.Logout@3b69e7d1]" started-at="2024-10-22T21:21:40 IST" name="verifyLogoutFromMyAccountMenu" finished-at="2024-10-22T21:21:40 IST" duration-ms="2" status="SKIP">
+        <test-method signature="verifyLogoutFromMyAccountMenu()[pri:1, instance:tests.Logout@3fc2959f]" started-at="2024-10-24T22:18:41 IST" name="verifyLogoutFromMyAccountMenu" finished-at="2024-10-24T22:18:41 IST" duration-ms="1" status="SKIP">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[The value of i is 1 and hence this test got skipped]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: The value of i is 1 and hence this test got skipped
-at tests.Logout.verifyLogoutFromMyAccountMenu(Logout.java:41)
+at tests.Logout.verifyLogoutFromMyAccountMenu(Logout.java:43)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -158,17 +158,17 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogoutFromMyAccountMenu -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Logout@3b69e7d1]" started-at="2024-10-22T21:21:40 IST" name="teardown" finished-at="2024-10-22T21:21:40 IST" duration-ms="160" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Logout@3fc2959f]" started-at="2024-10-24T22:18:41 IST" name="teardown" finished-at="2024-10-24T22:18:41 IST" duration-ms="123" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.Logout -->
       <class name="tests.Search">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Search@7586beff]" started-at="2024-10-22T21:21:34 IST" name="setup" finished-at="2024-10-22T21:21:36 IST" duration-ms="2701" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Search@10683d9d]" started-at="2024-10-24T22:18:35 IST" name="setup" finished-at="2024-10-24T22:18:37 IST" duration-ms="2699" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifySearchingForExisitingProduct()[pri:1, instance:tests.Search@7586beff]" started-at="2024-10-22T21:21:36 IST" name="verifySearchingForExisitingProduct" finished-at="2024-10-22T21:21:37 IST" duration-ms="647" status="FAIL">
+        <test-method signature="verifySearchingForExisitingProduct()[pri:1, instance:tests.Search@10683d9d]" started-at="2024-10-24T22:18:37 IST" name="verifySearchingForExisitingProduct" finished-at="2024-10-24T22:18:38 IST" duration-ms="637" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -179,7 +179,7 @@ at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertTrue(Assert.java:57)
 at org.testng.Assert.assertTrue(Assert.java:67)
-at tests.Search.verifySearchingForExisitingProduct(Search.java:39)
+at tests.Search.verifySearchingForExisitingProduct(Search.java:41)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -212,19 +212,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchingForExisitingProduct -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Search@7586beff]" started-at="2024-10-22T21:21:37 IST" name="teardown" finished-at="2024-10-22T21:21:37 IST" duration-ms="142" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Search@10683d9d]" started-at="2024-10-24T22:18:38 IST" name="teardown" finished-at="2024-10-24T22:18:38 IST" duration-ms="149" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method signature="verifySearchingWithoutAnyProduct()[pri:3, instance:tests.Search@7586beff]" started-at="2024-10-22T21:21:37 IST" name="verifySearchingWithoutAnyProduct" finished-at="2024-10-22T21:21:37 IST" depends-on-methods="tests.Search.verifySearchingForExisitingProduct" duration-ms="0" status="SKIP">
+        <test-method signature="verifySearchingWithoutAnyProduct()[pri:3, instance:tests.Search@10683d9d]" started-at="2024-10-24T22:18:38 IST" name="verifySearchingWithoutAnyProduct" finished-at="2024-10-24T22:18:38 IST" depends-on-methods="tests.Search.verifySearchingForExisitingProduct" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method tests.Search.verifySearchingWithoutAnyProduct() on instance tests.Search@7586beff depends on not successfully finished methods 
-[tests.Search.verifySearchingForExisitingProduct() on instance tests.Search@7586beff]]]>
+              <![CDATA[Method tests.Search.verifySearchingWithoutAnyProduct() on instance tests.Search@10683d9d depends on not successfully finished methods 
+[tests.Search.verifySearchingForExisitingProduct() on instance tests.Search@10683d9d]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method tests.Search.verifySearchingWithoutAnyProduct() on instance tests.Search@7586beff depends on not successfully finished methods 
-[tests.Search.verifySearchingForExisitingProduct() on instance tests.Search@7586beff]
+              <![CDATA[java.lang.Throwable: Method tests.Search.verifySearchingWithoutAnyProduct() on instance tests.Search@10683d9d depends on not successfully finished methods 
+[tests.Search.verifySearchingForExisitingProduct() on instance tests.Search@10683d9d]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -252,39 +252,39 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- verifySearchingWithoutAnyProduct -->
       </class> <!-- tests.Search -->
       <class name="tests.Register">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Register@55141def]" started-at="2024-10-22T21:20:47 IST" name="setup" finished-at="2024-10-22T21:20:52 IST" duration-ms="4812" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Register@4802796d]" started-at="2024-10-24T22:17:49 IST" name="setup" finished-at="2024-10-24T22:17:53 IST" duration-ms="4107" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterAccountUsingMandatoryFields()[pri:1, instance:tests.Register@55141def]" started-at="2024-10-22T21:20:52 IST" name="verifyRegisterAccountUsingMandatoryFields" finished-at="2024-10-22T21:20:53 IST" duration-ms="1423" status="PASS">
+        <test-method signature="verifyRegisterAccountUsingMandatoryFields()[pri:1, instance:tests.Register@4802796d]" started-at="2024-10-24T22:17:53 IST" name="verifyRegisterAccountUsingMandatoryFields" finished-at="2024-10-24T22:17:54 IST" duration-ms="1522" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegisterAccountUsingMandatoryFields -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Register@55141def]" started-at="2024-10-22T21:20:53 IST" name="teardown" finished-at="2024-10-22T21:20:53 IST" duration-ms="138" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Register@4802796d]" started-at="2024-10-24T22:17:55 IST" name="teardown" finished-at="2024-10-24T22:17:55 IST" duration-ms="149" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Register@55141def]" started-at="2024-10-22T21:20:53 IST" name="setup" finished-at="2024-10-22T21:20:57 IST" duration-ms="3408" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Register@4802796d]" started-at="2024-10-24T22:17:55 IST" name="setup" finished-at="2024-10-24T22:17:58 IST" duration-ms="3496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterAccountUsingAllFields()[pri:2, instance:tests.Register@55141def]" started-at="2024-10-22T21:20:57 IST" name="verifyRegisterAccountUsingAllFields" finished-at="2024-10-22T21:20:58 IST" duration-ms="1383" status="PASS">
+        <test-method signature="verifyRegisterAccountUsingAllFields()[pri:2, instance:tests.Register@4802796d]" started-at="2024-10-24T22:17:58 IST" name="verifyRegisterAccountUsingAllFields" finished-at="2024-10-24T22:18:00 IST" duration-ms="1609" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegisterAccountUsingAllFields -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Register@55141def]" started-at="2024-10-22T21:20:58 IST" name="teardown" finished-at="2024-10-22T21:20:58 IST" duration-ms="139" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Register@4802796d]" started-at="2024-10-24T22:18:00 IST" name="teardown" finished-at="2024-10-24T22:18:00 IST" duration-ms="157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Register@55141def]" started-at="2024-10-22T21:20:58 IST" name="setup" finished-at="2024-10-22T21:21:02 IST" duration-ms="3554" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.Register@4802796d]" started-at="2024-10-24T22:18:00 IST" name="setup" finished-at="2024-10-24T22:18:05 IST" duration-ms="4862" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterAccountWithoutAnyDetails()[pri:3, instance:tests.Register@55141def]" started-at="2024-10-22T21:21:02 IST" name="verifyRegisterAccountWithoutAnyDetails" finished-at="2024-10-22T21:21:03 IST" duration-ms="989" status="PASS">
+        <test-method signature="verifyRegisterAccountWithoutAnyDetails()[pri:3, instance:tests.Register@4802796d]" started-at="2024-10-24T22:18:05 IST" name="verifyRegisterAccountWithoutAnyDetails" finished-at="2024-10-24T22:18:06 IST" duration-ms="941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyRegisterAccountWithoutAnyDetails -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Register@55141def]" started-at="2024-10-22T21:21:03 IST" name="teardown" finished-at="2024-10-22T21:21:03 IST" duration-ms="165" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Register@4802796d]" started-at="2024-10-24T22:18:06 IST" name="teardown" finished-at="2024-10-24T22:18:06 IST" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

@@ -16,7 +16,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Base {
 	
-	public WebDriver driver;
+	WebDriver driver;
 	public Properties prop;
 	
 	public Base() {

@@ -9,8 +9,8 @@
       <class name="tests.Logout">
         <methods>
           <include name="setup"/>
-          <include name="teardown"/>
           <include name="verifyLogoutFromMyAccountMenu"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- tests.Logout -->
       <class name="tests.Search">
